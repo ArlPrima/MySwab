@@ -1,0 +1,341 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+/*===== VARIABLES CSS =====*/
+:root {
+    --header-height: 2.5rem;
+
+    /*========== Colors ==========*/
+    --first-color: #DA2535;
+    --title-color: #161212;
+    --text-color: #5B5757;
+    --text-color-light: #8F8A8A;
+    --body-color: #FEFBFB;
+    --item: #12192C;
+    --abulogin: #8590AD;
+    --Garis-pink-muda : #A4161A; 
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+    --biggest-font-size: 2rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    
+    /*========== Font weight ==========*/
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /*========== Margenes ==========*/
+    --mb-1: .5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+    /*========== z index ==========*/
+
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+    :root {
+        --biggest-font-size: 3rem;
+        --h2-font-size: 1.75rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+    }
+}
+
+/*========== BASE ==========*/
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: var(--header-height) 0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+ul,
+p {
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*========== LAYOUT ==========*/
+
+
+.bd-container {
+    max-width: 968px;
+    width: calc(100% - 3rem);
+    margin-left: var(--mb-3);
+    margin-right: var(--mb-3);
+}
+
+.bd-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.l-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--body-color);
+}
+
+/*========== NAV ==========*/
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.nav__item {
+    margin-bottom: var(--mb-3);
+}
+
+.nav__link, .nav__logo{
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+.nav__logo:hover {
+    color: var(--first-color);
+}
+
+.nav__link {
+    transition: .3s;
+}
+
+.nav__link:hover {
+    color: var(--first-color);
+}
+
+
+/*=== Form ===*/
+.form{
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+}
+.form__content{
+    width: 290px;
+}
+.form__img{
+    display: none;
+}
+.form__title{
+    font-size: var(--biggest-font-size);
+    font-weight: bold ;
+    color: var(--Garis-pink-muda);
+
+    
+}
+.form__title2{
+    font-size: var(--normal-font-size);
+    margin-bottom: 2rem;
+}
+.form__div{
+    position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin-bottom: 1rem;
+    padding: .25rem 0;
+    border-bottom: 1px solid var(--text-color);
+}
+
+/*=== Div icon ===*/
+
+.form__icon{
+    font-size: 1.5rem;
+    color: var(--text-color);
+    transition: .3s;
+}
+
+/*=== Icon focus ===*/
+.form__label{
+    display: block;
+    position: absolute;
+    left: .75rem;
+    top: .25rem;
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    transition: .3s;
+}
+
+/*=== Label focus ===*/
+.form__div.focus .form__label{
+    top: -1rem;
+    font-size: .875rem;
+    color: var(--item);
+}
+
+.form__div-input{
+    position: relative;
+}
+.form__input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    padding: .5rem .75rem;
+    font-size: 1.2rem;
+    color: var(--item);
+    transition: .3s;
+}
+
+.form__button{
+    width: 100%;
+    padding: 1rem;
+    font-size: var(--normal-font-size);
+    font-weight: bold;
+    outline: none;
+    border: none;
+    margin-bottom: 3rem;
+    background-color: var(--Garis-pink-muda);
+    color: #fff;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: .3s;
+}
+.form__button:hover{
+    box-shadow: 0px 15px 36px rgba(0,0,0,.15);
+}
+
+/*========== FOOTER ==========*/
+.footer.section{
+    background-color: var(--Garis-pink-muda);
+}   
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.footer__title {
+    margin-bottom: var(--mb-1);
+    font-size: var(--h2-font-size );
+    color: var(--body-color);
+    font-weight: bold;
+    
+}
+
+
+.footer__social {
+    font-size: 1.5rem;
+    color: var(--body-color);
+    margin-right: var(--mb-3);
+}
+
+.footer__social:hover {
+    color: var(--item);
+}
+
+.footer__copy {
+    text-align: center;
+    font-size: var(--small-font-size);
+    color: var(--body-color);
+    margin-top: 1rem;
+}
+
+/*========== MEDIA QUERIES ==========*/
+
+/* For full-screen images on small screens */
+@media screen and (min-width: 768px) {
+    body {
+        margin: 0;
+    }
+
+    .section {
+        padding-top: 3rem;
+    }
+
+    .nav {
+        height: calc(var(--header-height) + 1.5rem);
+    }
+
+    .nav__list {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav__item {
+        margin-left: var(--mb-5);
+        margin-bottom: 0;
+    }
+
+
+}
+
+@media screen and (min-width: 968px) {
+    .bd-container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .form{
+        grid-template-columns: 1.5fr 1fr;
+        padding: 0 2rem;
+    }
+    .form__content{
+        width: 320px;
+    }
+    .form__img{
+        display: block;
+        width: 700px;
+        justify-self: center;
+    }
+
+}
+
